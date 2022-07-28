@@ -2,10 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
+  Button,
   View,
   TouchableHighlight,
   Image,
   SafeAreaView,
+  Alert,
 } from "react-native";
 
 export default function App() {
@@ -24,6 +26,15 @@ export default function App() {
           }}
         />
       </TouchableHighlight>
+      <Button
+        title="Click Me"
+        onPress={() =>
+          Alert.alert("Recipe", "Mac and Cheese", [
+            { text: "Yes", onPress: () => console.log("yes") },
+            { text: "No", onPress: () => console.log("yes") },
+          ])
+        }
+      />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
